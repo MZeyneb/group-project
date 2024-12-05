@@ -12,6 +12,21 @@
   ],
   "students": [
     {
+      "id": "2",
+      "fullName": "Ali Jalilov",
+      "email": "ali.jalilov@code.edu.az",
+      "username": "AliAliyev",
+      "password": "Aliyev123",
+      "profileImage": "https://static.vecteezy.com/system/resources/previews/021/770/056/non_2x/avatar-of-a-student-character-free-vector.jpg",
+      "teacherId": "2",
+      "grades": [
+        {
+          "taskId": "1",
+          "grade": 70
+        }
+      ]
+    },
+    {
       "id": "1",
       "fullName": "Ali Jalilov",
       "email": "ali.jalilov@code.edu.az",
@@ -30,6 +45,22 @@
   "tasks": [
     {
       "id": "1",
+      "title": "local storage",
+      "description": "lorem ipsum dolor",
+      "topic": "REACT",
+      "deadline": "Today at 5:00 PM",
+      "createdAt": "2024-05-09 00:04:00",
+      "teacherId": "1",
+      "assignments": [
+        {
+          "studentId": "1",
+          "taskUrl": "https://github.com/KananAmir/AZMP101-JS&quot",
+          "assignDate": "2024-05-09 00:04:00"
+        }
+      ]
+    },
+    {
+      "id": "2",
       "title": "local storage",
       "description": "lorem ipsum dolor",
       "topic": "REACT",
