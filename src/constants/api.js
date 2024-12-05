@@ -1,10 +1,10 @@
-const BASE_URL = "http://localhost:8080/";
+  const BASE_URL = "http://localhost:8080";
 
-const endpoints = {
-  teachers: "teachers",
-  students: "students",
-  tasks: "tasks",
-};
+  const endpoints = {
+    teachers: "teachers",
+    students: "students",
+    tasks: "tasks",
+  };
 
-export { endpoints };
-export default BASE_URL;
+  export { endpoints };
+  export default BASE_URL;
