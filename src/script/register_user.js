@@ -4,9 +4,10 @@ import { endpoints } from "../constants/api.js";
 const username = document.querySelector("#register-username");
 const password = document.querySelector("#register-password");
 const email = document.querySelector("#register-email");
+const inputFile = document.querySelector("#input_file");
 const registerForm = document.querySelector("#register-form");
-let totalDAta = null;
 
+let totalDAta = null;
 
 async function fetchData(endpoint) {
   try {
@@ -20,15 +21,29 @@ async function fetchData(endpoint) {
   }
 }
 
+function validatePassword(password) {
+  const regex = /^(?=.*[A-Z])(?=.*[0-9]).{8,}$/;
+  return regex.test(password);
+}
+
 registerForm.addEventListener("submit", async function (e) {
   e.preventDefault();
   const name_value = username.value.trim();
   const email_value = email.value.trim();
   const password_value = password.value.trim();
+  const file = inputFile.files[0];
 
+  if (!validatePassword(password_value)) {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Şifre en az 8 karakter, bir büyük harf ve bir rakam içermelidir.",
+      showConfirmButton: true,
+    });
+    return; 
+  }
 
-  await fetchData("students"); 
-
+  await fetchData("students");
 
   const findAccount = totalDAta.find(
     (q) => q.username === name_value || q.email === email_value
@@ -36,14 +51,13 @@ registerForm.addEventListener("submit", async function (e) {
 
   if (!findAccount) {
     const user = {
-      id: Date.now(), 
+      id: Date.now(),
       name: name_value,
       email: email_value,
       password: password_value,
       Islogged: false,
+      profileImage: file ? URL.createObjectURL(file) : "",
     };
-
-
     fetch(`${BASE_URL}/students`, {
       method: "POST",
       headers: {
@@ -53,8 +67,7 @@ registerForm.addEventListener("submit", async function (e) {
     })
       .then((res) => {
         if (res.ok) {
-          registerForm.reset(); 
-          fetchData("students"); 
+          registerForm.reset();
           Swal.fire({
             position: "center",
             icon: "success",
@@ -62,11 +75,26 @@ registerForm.addEventListener("submit", async function (e) {
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
-            window.location.replace("login_user.html");
+            window.location.href = "login_user.html";
+          });
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "Bir hata oluştu.",
+            icon: "error",
+            confirmButtonText: "Tamam",
           });
         }
       })
-      .catch((err) => console.error("Kullanıcı ekleme hatası:", err));
+      .catch((err) => {
+        console.error("Kullanıcı ekleme hatası:", err);
+        Swal.fire({
+          title: "Error!",
+          text: "Bir hata oluştu. Lütfen tekrar deneyin.",
+          icon: "error",
+          confirmButtonText: "Tamam",
+        });
+      });
   } else {
     Swal.fire({
       position: "center",
@@ -76,4 +104,17 @@ registerForm.addEventListener("submit", async function (e) {
       timer: 1500,
     });
   }
+});
+
+console.log(Swal);
+
+const btn = document.querySelector(".btn");
+
+btn.addEventListener("click", function () {
+  Swal.fire({
+    title: "Error!",
+    text: "Do you want to continue",
+    icon: "error",
+    confirmButtonText: "Cool",
+  });
 });

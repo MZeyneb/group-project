@@ -1,39 +1,66 @@
-import BASE_URL, { endpoints } from "../constants.js";
+import BASE_URL from "../constants/api.js";
+import { endpoints } from "../constants/api.js";
 
-// Function to handle login
-async function login() {
-  const username = document.getElementById("login-username").value;
-  const password = document.getElementById("login-password").value;
+const loginUsername = document.querySelector("#login-username");
+const loginPassword = document.querySelector("#login-password");
+const loginButton = document.querySelector("#login-btn");
 
-  if (!username || !password) {
-    alert("Please fill in all fields.");
-    return;
-  }
+loginButton.addEventListener("click", async function (e) {
+  e.preventDefault();
 
-  // Check both teachers and students
-  const teacherResponse = await fetch(`${BASE_URL}${endpoints.teachers}`);
-  const teachers = await teacherResponse.json();
+  const username_value = loginUsername.value.trim();
+  const password_value = loginPassword.value.trim();
 
-  const studentResponse = await fetch(`${BASE_URL}${endpoints.students}`);
-  const students = await studentResponse.json();
+  if (username_value && password_value) {
+    const students = await fetchData("students");
 
-  // Find user in teachers or students
-  const user =
-    teachers.find(
-      (user) => user.username === username && user.password === password
-    ) ||
-    students.find(
-      (user) => user.username === username && user.password === password
+    const findAccount = students.find(
+      (student) =>
+        student.username === username_value &&
+        student.password === password_value
     );
 
-  if (user) {
-    alert(`Welcome, ${user.username}!`);
-    // You can redirect or store login data in localStorage/sessionStorage
-    window.location.href = "dashboard.html"; // Example redirection after login
+    if (findAccount) {
+
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Giriş Başarılı!",
+        showConfirmButton: false,
+        timer: 1500,
+      }).then(() => {
+
+        window.location.replace("register_user.html"); 
+      });
+    } else {
+
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Kullanıcı adı veya şifre hatalı!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   } else {
-    alert("Invalid username or password.");
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Lütfen tüm alanları doldurun!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
+});
+
+
+async function fetchData(endpoint) {
+  try {
+    const response = await fetch(`${BASE_URL}/${endpoint}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Veri alma hatası:", error);
+    return [];
   }
 }
-
-// Attach event listener
-document.getElementById("login-btn").addEventListener("click", login);
