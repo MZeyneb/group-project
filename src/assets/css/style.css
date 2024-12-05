@@ -9,3 +9,9 @@
     list-style: none;
     scroll-behavior: smooth;
 }
+
+
+nav{
+    padding: 20px 80px;
+    background-color: #A7C7E7;
+}
