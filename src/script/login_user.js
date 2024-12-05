@@ -1,66 +1,76 @@
-import BASE_URL from "../constants/api.js";
-import { endpoints } from "../constants/api.js";
+import BASE_URL, { endpoints } from "../constants/api.js";
 
-const loginUsername = document.querySelector("#login-username");
-const loginPassword = document.querySelector("#login-password");
+
+const usernameInput = document.querySelector("#login-username");
+const passwordInput = document.querySelector("#login-password");
 const loginButton = document.querySelector("#login-btn");
 
-loginButton.addEventListener("click", async function (e) {
-  e.preventDefault();
-
-  const username_value = loginUsername.value.trim();
-  const password_value = loginPassword.value.trim();
-
-  if (username_value && password_value) {
-    const students = await fetchData("students");
-
-    const findAccount = students.find(
-      (student) =>
-        student.username === username_value &&
-        student.password === password_value
-    );
-
-    if (findAccount) {
-
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Giriş Başarılı!",
-        showConfirmButton: false,
-        timer: 1500,
-      }).then(() => {
-
-        window.location.replace("register_user.html"); 
-      });
-    } else {
-
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Kullanıcı adı veya şifre hatalı!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  } else {
-    Swal.fire({
-      position: "center",
-      icon: "error",
-      title: "Lütfen tüm alanları doldurun!",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  }
-});
-
-
-async function fetchData(endpoint) {
+async function fetchUsers() {
   try {
-    const response = await fetch(`${BASE_URL}/${endpoint}`);
-    const data = await response.json();
-    return data;
+    const response = await fetch(`${BASE_URL}/${endpoints.students}`);
+    if (!response.ok) {
+      throw new Error("Kullanıcı bilgileri alınamadı.");
+    }
+    return await response.json();
   } catch (error) {
     console.error("Veri alma hatası:", error);
     return [];
   }
 }
+
+loginButton.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (!username || !password) {
+    Swal.fire({
+      icon: "error",
+      title: "Hata",
+      text: "Kullanıcı adı ve şifre boş bırakılamaz!",
+    });
+    return;
+  }
+
+  try {
+    const users = await fetchUsers();
+
+    const matchingUser = users.find(
+      (user) => user.name === username && user.password === password
+    );
+
+    if (matchingUser) {
+      Swal.fire({
+        icon: "success",
+        title: "Başarılı!",
+        text: "Giriş başarılı, hoş geldiniz!",
+      }).then(() => {
+        matchingUser.Islogged = true;
+
+        fetch(`${BASE_URL}/${endpoints.students}/${matchingUser.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Islogged: true }),
+        });
+
+        window.location.href = "register_user.html";
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Hata",
+        text: "Kullanıcı adı veya şifre hatalı!",
+      });
+    }
+  } catch (error) {
+    console.error("Giriş işlemi hatası:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Hata",
+      text: "Bir sorun oluştu, lütfen tekrar deneyin.",
+    });
+  }
+});
