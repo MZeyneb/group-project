@@ -8,6 +8,20 @@
       "password": "Amirov123",
       "major": "programming",
       "profileImage": "https://cdn3d.iconscout.com/3d/premium/thumb/teacher-avatar-3d-icon-download-in-png-blend-fbx-gltf-file-formats--professor-education-profession-pack-people-icons-4936175.png?f=webp"
+    },
+    {
+      "id": 1733410451392,
+      "name": "zeyneb",
+      "email": "zeyneb@gmail.com",
+      "password": "zeyneb20052005",
+      "Islogged": false
+    },
+    {
+      "id": 1733410587078,
+      "name": "zeynebb",
+      "email": "zeynebb@gmail.com",
+      "password": "Zeyneb2005",
+      "Islogged": false
     }
   ],
   "students": [
@@ -38,6 +52,13 @@
       "name": "asdas",
       "email": "asda@dsadas",
       "password": "asdasd",
+      "Islogged": false
+    },
+    {
+      "id": 1733409564359,
+      "name": "zeyneb",
+      "email": "zeyneb@gmail.com",
+      "password": "refgreg5",
       "Islogged": false
     }
   ],
