@@ -7,7 +7,6 @@ const email = document.querySelector("#register-email");
 const registerForm = document.querySelector("#register-form");
 let totalDAta = null;
 
-
 async function fetchData(endpoint) {
   try {
     const response = await fetch(`${BASE_URL}/${endpoint}`);
@@ -27,8 +26,7 @@ registerForm.addEventListener("submit", async function (e) {
   const password_value = password.value.trim();
 
 
-  await fetchData("students"); 
-
+  await fetchData("students");
 
   const findAccount = totalDAta.find(
     (q) => q.username === name_value || q.email === email_value
@@ -53,20 +51,38 @@ registerForm.addEventListener("submit", async function (e) {
     })
       .then((res) => {
         if (res.ok) {
+  
           registerForm.reset(); 
-          fetchData("students"); 
+          
           Swal.fire({
             position: "center",
             icon: "success",
             title: "Hesabınız başarıyla oluşturuldu! Tebrikler!",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 3000, 
           }).then(() => {
-            window.location.replace("login_user.html");
+            window.location.href = "login_user.html";
+          });
+          
+        } else {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Kullanıcı oluşturulurken bir hata oluştu.",
+            showConfirmButton: false,
+            timer: 1500,
           });
         }
       })
-      .catch((err) => console.error("Kullanıcı ekleme hatası:", err));
+      .catch((err) => {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Kullanıcı ekleme hatası. Lütfen tekrar deneyin.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   } else {
     Swal.fire({
       position: "center",
