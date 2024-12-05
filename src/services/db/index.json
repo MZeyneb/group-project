@@ -40,7 +40,8 @@
         {
           "studentId": "1",
           "taskUrl": "https://github.com/KananAmir/AZMP101-JS&quot",
-          "assignDate": "2024-05-09 00:04:00"
+          "assignDate": "2024-05-09 00:04:00",
+          "truefalse": "Link Boşdur"
         }
       ]
     }
