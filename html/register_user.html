@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="register-form">
-        <h2>Register</h2>
-        <form id="register-form-element">
-            <input type="text" id="register-username" placeholder="Username" required>
-            <input type="password" id="register-password" placeholder="Password" required>
-            <input type="email" id="register-email" placeholder="Email" required>
-            <button type="submit">Register</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login here</a></p>
+      <h2>Register</h2>
+      <form id="register-form-element">
+        <input
+          type="text"
+          id="register-username"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          id="register-password"
+          placeholder="Password"
+          required
+        />
+        <input type="email" id="register-email" placeholder="Email" required />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./src/script/register_user.js" type="module"></script>
-</body>
+    <script src="../src/script/register_user.js" type="module"></script>
+  </body>
 </html>

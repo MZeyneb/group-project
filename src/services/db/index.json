@@ -25,6 +25,20 @@
           "grade": 70
         }
       ]
+    },
+    {
+      "id": 1733406826473,
+      "name": "asdas",
+      "email": "asdas@dasdas",
+      "password": "sadas",
+      "Islogged": false
+    },
+    {
+      "id": 1733406841690,
+      "name": "asdas",
+      "email": "asda@dsadas",
+      "password": "asdasd",
+      "Islogged": false
     }
   ],
   "tasks": [
@@ -50,7 +64,11 @@
       "id": "1",
       "className": "azmp",
       "teacherId": "2",
-      "studentIds": ["1", "2", "3"]
+      "studentIds": [
+        "1",
+        "2",
+        "3"
+      ]
     }
   ]
 }
