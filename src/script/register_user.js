@@ -67,9 +67,6 @@ registerForm.addEventListener("submit", async function (e) {
     })
       .then((res) => {
         if (res.ok) {
-  
-          registerForm.reset(); 
-          
           Swal.fire({
             position: "center",
             icon: "success",
@@ -79,7 +76,7 @@ registerForm.addEventListener("submit", async function (e) {
           }).then(() => {
             window.location.href = "login_user.html";
           });
-          
+          registerForm.reset();   
         } else {
           Swal.fire({
             position: "center",
