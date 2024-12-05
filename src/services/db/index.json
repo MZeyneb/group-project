@@ -1,0 +1,56 @@
+{
+  "teachers": [
+    {
+      "id": "1",
+      "fullName": "Kanan Amirov",
+      "email": "kanan.amirov@code.edu.az",
+      "username": "KananAmir",
+      "password": "Amirov123",
+      "major": "programming",
+      "profileImage": "https://cdn3d.iconscout.com/3d/premium/thumb/teacher-avatar-3d-icon-download-in-png-blend-fbx-gltf-file-formats--professor-education-profession-pack-people-icons-4936175.png?f=webp"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "fullName": "Ali Jalilov",
+      "email": "ali.jalilov@code.edu.az",
+      "username": "AliAliyev",
+      "password": "Aliyev123",
+      "profileImage": "https://static.vecteezy.com/system/resources/previews/021/770/056/non_2x/avatar-of-a-student-character-free-vector.jpg",
+      "teacherId": "2",
+      "grades": [
+        {
+          "taskId": "1",
+          "grade": 70
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "local storage",
+      "description": "lorem ipsum dolor",
+      "topic": "REACT",
+      "deadline": "Today at 5:00 PM",
+      "createdAt": "2024-05-09 00:04:00",
+      "teacherId": "1",
+      "assignments": [
+        {
+          "studentId": "1",
+          "taskUrl": "https://github.com/KananAmir/AZMP101-JS&quot",
+          "assignDate": "2024-05-09 00:04:00"
+        }
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "id": "1",
+      "className": "azmp",
+      "teacherId": "2",
+      "studentIds": ["1", "2", "3"]
+    }
+  ]
+}

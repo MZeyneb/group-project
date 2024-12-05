@@ -1,0 +1,22 @@
+
+
+E-LEARNING PLATFORM MAIN FEATURES 
+- - - - - - - - - - - - - - - - - - 
+1. Auth System (login/register of teachers & students)
+- Register (POST request to /students or /teachers), in UI with validation
+- Login (checking user data from API and setting to role and userId to localStorage)
+2. RBAC (role based access control)
+- Access of teachers & students for specific pages & actions (like addTask page, getting tasks etc.)
+3. Form Validation with toasters or error messages in UI (for all the forms)
+4. API service with axios for all the requests
+5. Responsive UI and UX
+6. CRUD of (/teachers, /students/, /taks) - Create, Read, Update, Delete
+7. Detail Pages with dynamic id for teachers, students, tasks
+8. Search, Sort, Filter features for tha data
+9. Task Feature (assigning tasks, deadline logic)
+10. Teacher assigning task, viewing assignments, deleting task etc.
+11. Students viewing tasks, assigning to task, deadline logic
+12. Unique email for the teachers, students
+13. Production of json-server and client app
+14. Clean Folder Structure, Modularity in app and use of .git, GitHub branches & workflow
+15. Endpoints: teachers, students, tasks
