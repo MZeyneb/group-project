@@ -22,13 +22,6 @@
       "email": "zeynebb@gmail.com",
       "password": "Zeyneb2005",
       "Islogged": false
-    },
-    {
-      "id": 1733428852643,
-      "username": "nara",
-      "email": "nar@gmail.com",
-      "password": "rEGISTER123",
-      "Islogged": false
     }
   ],
   "students": [
@@ -197,12 +190,12 @@
       "profileImage": "blob:http://127.0.0.1:5500/8459dd90-6708-40fa-af88-5317d23fd871"
     },
     {
-      "id": 1733429050145,
-      "name": "nara",
-      "email": "nara@gmai.com",
-      "password": "Register123",
+      "id": 1733429513202,
+      "name": "astrid",
+      "email": "astrid@gmail.com",
+      "password": "Astrid123",
       "Islogged": false,
-      "profileImage": "blob:http://127.0.0.1:5500/a82e07be-2d3d-4077-9a89-ccd5758d8509"
+      "profileImage": "blob:http://127.0.0.1:5500/3064b115-1ae3-4016-812c-c95bea7f0e28"
     }
   ],
   "tasks": [

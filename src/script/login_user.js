@@ -1,6 +1,5 @@
 import BASE_URL, { endpoints } from "../constants/api.js";
 
-
 const usernameInput = document.querySelector("#login-username");
 const passwordInput = document.querySelector("#login-password");
 const loginButton = document.querySelector("#login-btn");
