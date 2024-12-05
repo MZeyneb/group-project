@@ -28,7 +28,7 @@ registerForm.addEventListener("submit", async function (e) {
   const email_value = email.value.trim();
   const password_value = password.value.trim();
 
-  // Validate the password
+
   if (!validatePassword(password_value)) {
     Swal.fire({
       position: "center",
@@ -37,7 +37,7 @@ registerForm.addEventListener("submit", async function (e) {
       showConfirmButton: false,
       timer: 1500,
     });
-    return; // Prevent form submission
+    return;
   }
 
   await fetchData("teachers");
@@ -69,7 +69,7 @@ registerForm.addEventListener("submit", async function (e) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Hesabınız başarıyla oluşturuldu! Tebrikler!",
+            title: "Your account succesfully signed up!",
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
@@ -77,12 +77,12 @@ registerForm.addEventListener("submit", async function (e) {
           });
         }
       })
-      .catch((err) => console.error("Kullanıcı ekleme hatası:", err));
+      .catch((err) => console.error("Error", err));
   } else {
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Girdiğiniz e-posta veya kullanıcı adı zaten kullanılıyor!",
+      title: "Username or Email already taken!",
       showConfirmButton: false,
       timer: 1500,
     });
