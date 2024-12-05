@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/assets/css/resid.css">
+    <title>Document</title>
+</head>
+<body class="body">
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <p>Already a member? <a href="./login.html">Log In</a></p>
+        <select name="select" id="select">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="email" id="InputEmail1" placeholder="Email" required>
+        <input type="password" id="InputPassword1" placeholder="Password" required>
+        <input type="file" id="profileImage" accept="image/*" required>   
+        <button onclick="register()">Sign Up</button>
+      </div>
+      <script src="../src/script/register.js"></script>
+</body>
+</html>
