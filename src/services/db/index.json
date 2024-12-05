@@ -22,6 +22,13 @@
       "email": "zeynebb@gmail.com",
       "password": "Zeyneb2005",
       "Islogged": false
+    },
+    {
+      "id": 1733428852643,
+      "username": "nara",
+      "email": "nar@gmail.com",
+      "password": "rEGISTER123",
+      "Islogged": false
     }
   ],
   "students": [
@@ -188,6 +195,14 @@
       "password": "Emin12345",
       "Islogged": false,
       "profileImage": "blob:http://127.0.0.1:5500/8459dd90-6708-40fa-af88-5317d23fd871"
+    },
+    {
+      "id": 1733429050145,
+      "name": "nara",
+      "email": "nara@gmai.com",
+      "password": "Register123",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/a82e07be-2d3d-4077-9a89-ccd5758d8509"
     }
   ],
   "tasks": [
