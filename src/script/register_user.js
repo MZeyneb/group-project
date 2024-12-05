@@ -67,32 +67,36 @@ registerForm.addEventListener("submit", async function (e) {
     })
       .then((res) => {
         if (res.ok) {
-          registerForm.reset();
+  
+          registerForm.reset(); 
+          
           Swal.fire({
             position: "center",
             icon: "success",
             title: "Hesabınız başarıyla oluşturuldu! Tebrikler!",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 3000, 
           }).then(() => {
             window.location.href = "login_user.html";
           });
+          
         } else {
           Swal.fire({
-            title: "Error!",
-            text: "Bir hata oluştu.",
+            position: "center",
             icon: "error",
-            confirmButtonText: "Tamam",
+            title: "Kullanıcı oluşturulurken bir hata oluştu.",
+            showConfirmButton: false,
+            timer: 1500,
           });
         }
       })
       .catch((err) => {
-        console.error("Kullanıcı ekleme hatası:", err);
         Swal.fire({
-          title: "Error!",
-          text: "Bir hata oluştu. Lütfen tekrar deneyin.",
+          position: "center",
           icon: "error",
-          confirmButtonText: "Tamam",
+          title: "Kullanıcı ekleme hatası. Lütfen tekrar deneyin.",
+          showConfirmButton: false,
+          timer: 1500,
         });
       });
   } else {
