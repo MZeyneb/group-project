@@ -22,14 +22,16 @@ async function getAllTasks() {
 function drawcards2(arr) {
         cardinfo.innerHTML = ""
     arr.forEach(element => {
-        console.log(element.id);
+        const studentId = button.getAttribute('data-student-id');
+        const assignmentToUpdate = task.assignments.find(assignment => assignment.studentId === studentId);
         
         if(element.id ===studentId){
             
-            const card2 = document.createElement("div")
-            card2.classList.add("card2")
+            if(  assignmentToUpdate.isChecked){
+                const card2 = document.createElement("div")
+                card2.classList.add("card2")
 
-            card2.innerHTML = `
+                card2.innerHTML = `
                 <p class="title">title: ${element.title}</p>
                 <p class="description">description: ${element.description}</p>
                 <p class="topic">topic: ${element.topic}</p>
@@ -37,8 +39,9 @@ function drawcards2(arr) {
 
 
 
-            cardinfo.appendChild(card2)
-            cards.appendChild(cardinfo)
+                cardinfo.appendChild(card2)
+                cards.appendChild(cardinfo)
+            }
         }
         
     });
