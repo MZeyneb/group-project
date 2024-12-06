@@ -39,7 +39,7 @@
       "assignments": [
         {
           "studentId": "1",
-          "taskUrl": "1sdadas",
+          "taskUrl": "perviz",
           "assignDate": "2024-05-09 00:04:00"
         }
       ]
@@ -55,13 +55,12 @@
       "assignments": [
         {
           "studentId": "1",
-          "taskUrl": "1sdadas",
+          "taskUrl": "perviz",
           "assignDate": "2024-05-09 00:04:00"
         }
       ]
     }
   ],
-  
   "classes": [
     {
       "id": "1",
