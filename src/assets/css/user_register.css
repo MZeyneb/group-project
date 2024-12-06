@@ -1,0 +1,154 @@
+/* Genel stil */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+/* Sayfa arka planı ve genel görünüm */
+body {
+    background-color: #859a9d;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/007/784/841/non_2x/health-and-science-medical-innovation-concept-abstract-geometric-futuristic-background-from-hexagons-pattern-light-blue-radiant-background-illustration-vector.jpg");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Kayıt formu container */
+#register-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam beyaz arka plan */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px; /* Maksimum genişlik */
+    text-align: center;
+}
+
+/* Sidebar kısmı */
+#register-form .side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#register-form .side i {
+    font-size: 2rem;
+    color: #4c9f70;
+    margin-right: 10px;
+}
+
+#register-form .side h4 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Butonlar */
+.btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btns button {
+    width: 45%;
+    padding: 12px;
+    background-color: #06b9d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btns button a {
+    color: white;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.btns button:hover {
+    background-color: #3b7b56;
+}
+
+/* Başlık stili */
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Input alanları */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Input odaklanıldığında stil */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus {
+    border-color: #4c9f70;
+    outline: none;
+}
+
+/* Kayıt butonu */
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #06b9d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Buton hover efekti */
+input[type="submit"]:hover {
+    background-color: #08daff;
+}
+
+/* Mobil uyumluluk için */
+@media (max-width: 600px) {
+    #register-form {
+        padding: 20px;
+    }
+
+    #register-form h2 {
+        font-size: 1.5rem;
+    }
+}
+
+#last{
+    margin-top: 30px;
+   
+}
+
+#last a{
+    color: #06b9d9 ;
+   
+}
+#last a:hover{
+    color: #08daff ;
+   
+}

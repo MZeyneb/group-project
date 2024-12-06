@@ -1,90 +1,110 @@
 import BASE_URL from "../constants/api.js";
+import { endpoints } from "../constants/api.js";
 
 const username = document.querySelector("#register-username");
 const password = document.querySelector("#register-password");
 const email = document.querySelector("#register-email");
-const registerForm = document.querySelector("#register-form-element"); 
+const inputFile = document.querySelector("#input_file");
+const registerForm = document.querySelector("#register-form");
+
 let totalData = null;
 
-function validatePassword(password) {
-  const minLength = 8;
-  const hasUppercase = /[A-Z]/.test(password);
-  const hasNumber = /[0-9]/.test(password);
-  
-  return password.length >= minLength && hasUppercase && hasNumber;
-}
-
+// Verileri API'den almak için genel bir fonksiyon
 async function fetchData(endpoint) {
   try {
     const response = await fetch(`${BASE_URL}/${endpoint}`);
-    if (!response.ok) {
-      throw new Error('Ошибка при загрузке данных');
-    }
     const data = await response.json();
     totalData = data;
     return totalData;
   } catch (error) {
-    console.error('Ошибка при выполнении запроса:', error);
+    console.error("Veri alma hatası:", error);
+    return [];
   }
 }
 
+// Şifre doğrulama fonksiyonu
+function validatePassword(password) {
+  const regex = /^(?=.*[A-Z])(?=.*[0-9]).{8,}$/;
+  return regex.test(password);
+}
+
+// Form gönderim işlemi
 registerForm.addEventListener("submit", async function (e) {
   e.preventDefault();
-  const name_value = username.value.trim();
-  const email_value = email.value.trim();
-  const password_value = password.value.trim();
+  const nameValue = username.value.trim();
+  const emailValue = email.value.trim();
+  const passwordValue = password.value.trim();
+  const file = inputFile ? inputFile.files[0] : null;
 
-  if (!validatePassword(password_value)) {
+  // Şifre doğrulama
+  if (!validatePassword(passwordValue)) {
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "Password must be at least 8 characters long, contain an uppercase letter, and include a number.",
-      showConfirmButton: false,
-      timer: 1500,
+      title: "Şifre en az 8 karakter, bir büyük harf ve bir rakam içermelidir.",
+      showConfirmButton: true,
     });
     return;
   }
 
+  // Öğretmen verilerini çek
   await fetchData("teachers");
 
+  // Eşleşen bir kullanıcı var mı kontrol et
   const findAccount = totalData.find(
-    (q) => q.username === name_value || q.email === email_value
+    (q) => q.username === nameValue || q.email === emailValue
   );
 
   if (!findAccount) {
+    // Yeni kullanıcı nesnesi oluştur
     const user = {
       id: Date.now(),
-      username: name_value,
-      email: email_value,
-      password: password_value,
-      Islogged: false,
+      name: nameValue,
+      email: emailValue,
+      password: passwordValue,
+      isLogged: false,
+      profileImage: file ? URL.createObjectURL(file) : "",
     };
 
-    try {
-      const res = await fetch(`${BASE_URL}/teachers`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
-
-      if (res.ok) {
-        registerForm.reset(); 
-        await fetchData("teachers");
+    // Yeni öğretmen kaydı ekle
+    fetch(`${BASE_URL}/teachers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => {
+        if (res.ok) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Hesabınız başarıyla oluşturuldu! Tebrikler!",
+            showConfirmButton: false,
+            timer: 3000,
+          }).then(() => {
+            window.location.href = "teacher_login.html";
+          });
+          registerForm.reset();
+        } else {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Kullanıcı oluşturulurken bir hata oluştu.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((err) => {
         Swal.fire({
           position: "center",
-          icon: "success",
-          title: "Hesabınız başarıyla oluşturuldu! Tebrikler!",
+          icon: "error",
+          title: "Kullanıcı ekleme hatası. Lütfen tekrar deneyin.",
           showConfirmButton: false,
           timer: 1500,
-        }).then(() => {
-          window.location.replace("login_user.html");
         });
-      }
-    } catch (err) {
-      console.error("Kullanıcı ekleme hatası:", err);
-    }
+      });
   } else {
     Swal.fire({
       position: "center",
@@ -96,3 +116,16 @@ registerForm.addEventListener("submit", async function (e) {
   }
 });
 
+// Test için eklenen buton
+const btn = document.querySelector(".btn");
+
+if (btn) {
+  btn.addEventListener("click", function () {
+    Swal.fire({
+      title: "Error!",
+      text: "Do you want to continue",
+      icon: "error",
+      confirmButtonText: "Cool",
+    });
+  });
+}

@@ -107,15 +107,4 @@ registerForm.addEventListener("submit", async function (e) {
   }
 });
 
-console.log(Swal);
 
-const btn = document.querySelector(".btn");
-
-btn.addEventListener("click", function () {
-  Swal.fire({
-    title: "Error!",
-    text: "Do you want to continue",
-    icon: "error",
-    confirmButtonText: "Cool",
-  });
-});

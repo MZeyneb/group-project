@@ -4,29 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+    <link rel="stylesheet" href="../src/assets/css/teacher_register.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="register-form">
-      <h2>Teacher Register</h2>
-      <form id="register-form-element">
-        <input
-          type="text"
-          id="register-username"
-          placeholder="Username"
-          required
-        />
-        <input
-          type="password"
-          id="register-password"
-          placeholder="Password"
-          required
-        />
-        <input type="email" id="register-email" placeholder="Email" required />
-        
-
-        <button type="submit">Register</button>
-      </form>
-      <p>Already have an account? <a href="login.html">Login here</a></p>
+      <div class="side">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <h4>Join Our Classroom!</h4>
+      </div>
+      <div class="wrapper">
+        <div class="btns">
+          <button class="signin">
+            <a href="teacher_login.html">Sign In</a>
+          </button>
+          <button class="signup">
+            <a href="#">Sign Up</a>
+          </button>
+        </div>
+        <h2>Teacher Register</h2>
+        <form id="register-form-element">
+          <input
+            type="text"
+            id="register-username"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="email"
+            id="register-email"
+            placeholder="Email"
+            required
+          />
+          <input type="submit" class="sub" />
+        </form>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

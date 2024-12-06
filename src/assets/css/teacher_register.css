@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #859a9d;
+    background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-galaxy-background_23-2148973122.jpg?t=st=1733426440~exp=1733430040~hmac=59adcfb7b5932b612bb448b9fb68343acef8b56eadff32b49ad0131ac74ec500&w=996");
+    background-position: center center;
+    background-size: cover;
+
+}
+
+#register-form{
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 60px;
+    margin: 200px auto;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    width: 80%;
+    /* padding: 150px 0; */
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    height: 500px;
+
+}
+
+#register-form h2{
+    font-size: 30px;
+    color: #333333;
+}
+
+#register-form-element{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* position: relative; */
+    
+}
+
+.side{
+    width: 40%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+.side h4{
+    font-size: 30px;
+    color: #7db5aa;
+    text-shadow: 
+    -0.5px -0.5px 0 #333333, 
+    0.5px -0.5px 0 #333333, 
+    -0.5px 0.5px 0 #333333, 
+    0.5px 0.5px 0 #333333; 
+}
+
+.side i{
+    font-size: 80px;
+    color: #333333;
+}
+
+.wrapper{
+    margin-right: 180px;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.wrapper h2{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btns button{
+    padding: 3px 20px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btns .signup{
+    background-color: #333333;
+}
+
+.signup a{
+    color: white;
+    font-size: 16px;
+    
+}
+
+.btns .signin{
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+.btns .signin:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.signin a{
+    color: white;
+    font-size: 16px;
+    
+}
+
+#register-form input{
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+
+}
+
+
+.selects{
+    margin-top: 20px;
+}
+
+#register-form .sub{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #333333;
+    color: white;
+    font-size: 17px;
+}
+
+#register-form .sub:hover{
+    background-color: #5b5b5b;
+
+}
+
+.btns .signup:hover{
+    background-color: #5b5b5b;
+}
