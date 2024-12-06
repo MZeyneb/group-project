@@ -80,7 +80,7 @@ registerForm.addEventListener("submit", async function (e) {
             showConfirmButton: false,
             timer: 1500,
           }).then(() => {
-            window.location.replace("login_user.html");
+            window.location.replace("teacher_login.html");
           });
         }
       })
