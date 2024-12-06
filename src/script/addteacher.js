@@ -73,7 +73,7 @@ document.getElementById('add-task-btn').addEventListener('click', () => {
                 ]
             };
 
-            return fetch('http://localhost:3000/tasks', {
+            return fetch('http://localhost:8080/tasks', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newTask)
@@ -105,7 +105,7 @@ let tasks = [];
 document.addEventListener('DOMContentLoaded', RenderTasks);
 
 function RenderTasks() {
-    fetch('http://localhost:3000/tasks')
+    fetch('http://localhost:8080/tasks')
         .then(response => response.json())
         .then(data => {
             tasks = data;
@@ -183,7 +183,7 @@ function deleteTask(TaskId) {
         cancelButtonText: 'Cancel',
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:3000/tasks/${TaskId}`, { method: 'DELETE' })
+            fetch(`http://localhost:8080/tasks/${TaskId}`, { method: 'DELETE' })
                 .then(() => {
                     Swal.fire({
                         title: 'Deleted!',
@@ -262,7 +262,7 @@ function editTask(TaskId) {
             task.topic = newTopic;
             task.deadline = newDeadline;
 
-            return fetch(`http://localhost:3000/tasks/${TaskId}`, {
+            return fetch(`http://localhost:8080/tasks/${TaskId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(task)
