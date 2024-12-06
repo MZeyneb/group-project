@@ -92,7 +92,7 @@ document.querySelectorAll('[data-action]').forEach((menuItem) => {
                 if (result.isConfirmed) {
                     window.location.href = "teacher_login.html";
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    window.location.href = "student_login.html";
+                    window.location.href = "login_user.html";
                 }
             });
         } 
@@ -110,7 +110,7 @@ document.querySelectorAll('[data-action]').forEach((menuItem) => {
                 if (result.isConfirmed) {
                     window.location.href = "teacher_register.html";
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    window.location.href = "student_register.html";
+                    window.location.href = "register_user.html";
                 }
             });
         }
