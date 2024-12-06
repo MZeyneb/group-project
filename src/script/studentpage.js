@@ -2,7 +2,7 @@ import { endpoints } from "../constants/api.js";
 import { addNewData, editDataById, getAllData } from "../services/api/index.js";
 
 async function getTasks() {
-    console.log("a");
+    console.log("Fetching tasks...");
     const res = await getAllData(endpoints.tasks);
     displayTasks(res.data);
 }
@@ -40,15 +40,12 @@ function displayTasks(tasks) {
                                 <input type="checkbox" class="checkbox" id="checkbox-${assignment.studentId}" /> 
                                 <button class="submit-btn"  data-student-id="${assignment.studentId}">Submit</button>
                             </strong>
-                            <br>
-                            
                         </li>
                     `).join('')}
                 </ul>
             `;
 
-            
-
+          
             const submitButtons = taskElement.querySelectorAll('.submit-btn');
             submitButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -74,10 +71,10 @@ function displayTasks(tasks) {
                         // };
                         // task.assignments.push(newAssignment);
 
-                        // Call the API to patch the updated task (this assumes you have a patch API)
-                        editDataById(endpoints.tasks, task.id, {
-                            assignments: task.assignments  // send the updated assignments array
-                        });
+                            
+                            editDataById(endpoints.tasks, task.id, {
+                                assignments: task.assignments  
+                            });
 
            
 
@@ -94,81 +91,7 @@ function displayTasks(tasks) {
                 });
             });
 
-
             taskList.appendChild(taskElement);
         });
-
-
-
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function handleSubmitClick(event) {
-//     const taskId = event.target.getAttribute('data-task-id');
-//     const studentId = event.target.getAttribute('data-student-id');
-    
-//     const statusElement = document.getElementById(`status-${taskId}-${studentId}`);
-//     const taskFileInput = document.getElementById(`task-file-${taskId}-${studentId}`).value;
-
-//     if (taskFileInput) {
-//         statusElement.textContent = "Uğurludur";
-//         statusElement.style.color = "green"; 
-//         storeData(taskId, studentId, taskFileInput, "Uğurludur");
-//     } else {
-//         statusElement.textContent = "Link Boşdur";
-//         statusElement.style.color = "red"; 
-//         storeData(taskId, studentId, taskFileInput, "Link Boşdur");
-//     }
-// }
-
-
-// function storeData(taskId, studentId, fileUrl, status) {
-//     const key = `task-${taskId}-student-${studentId}`;
-//     const data = {
-//         fileUrl,
-//         status
-//     };
-//     localStorage.setItem(key, JSON.stringify(data));
-// }
-
-
-// function getStoredFile(taskId, studentId) {
-//     const key = `task-${taskId}-student-${studentId}`;
-//     const data = localStorage.getItem(key);
-//     return data ? JSON.parse(data).fileUrl : '';
-// }
-
-
-// function getStoredStatus(taskId, studentId) {
-//     const key = `task-${taskId}-student-${studentId}`;
-//     const data = localStorage.getItem(key);
-//     return data ? JSON.parse(data).status : 'Link Boşdur';
-// }

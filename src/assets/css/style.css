@@ -1,203 +1,277 @@
-
-body {
-    background-color: rgba(4, 115, 19, 0.882);
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-}
-
-/* Başlıq Hissəsi */
-.telebe-head {
-    width: 80%;
-    height: 350px;
-    background-color: #00a6ff;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 50px;
-    border-bottom: 2px solid #fff;
-}
-
-.telebe-head h1 {
-    font-size: 3rem;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.telebe-head h2 {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 150px;
-}
-
-.telebe-head .img {
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-    position: relative;
-    bottom: 50px;
-    text-align: center;
-}
-
-.telebe-head img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Naviqasiya Menyusu */
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: start;
-    gap: 20px;
-    position: relative;
-    bottom: 140px;
-}
-
-nav ul li {
-    font-size: 1.2rem;
-}
-
-nav ul li a {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #007bff;
-}
-
-
-.icons ul {
     list-style: none;
-    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+
+  nav {
+    padding: 20px 80px;
+    background-color: #859a9d;
     display: flex;
-    justify-content: end;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 10px 0px;
+    z-index: 1000;
+  }
+  
+  nav h1 {
+    font-size: 30px;
+    color: #fdf4e2;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul {
+    display: flex;
     gap: 30px;
-    position: relative;
-    bottom: 180px;
-}
-
-.icons i {
-    font-size: 1.5rem;
-    color: #fff;
+  }
+  
+  nav ul li a {
+    font-size: 20px;
+    color: #fdf4e2;
+    transition: 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #333333;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .image {
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #333333;
+  }
+  
+  .image img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .user h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fdf4e2;
+  }
+  
+  .user:hover {
+    transform: scale(1.1);
     cursor: pointer;
-    transition: color 0.3s ease;
-}
+  }
+  
 
-.icons i:hover {
-    color: #007bff;
-}
+  .overlay {
+    height: 100px;
+    position: absolute;
+    background-color: #859a9d;
+    right: 30px;
+    top: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 500;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.3s;
+  }
+  
+  .overlay ul {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 10px;
+  }
+  
+  .overlay ul li a {
+    font-size: 20px;
+    color: #fdf4e2;
+    transition: 0.3s;
+  }
+  
+  .overlay ul li a:hover {
+    color: #333333;
+  }
+  
+  
+  #hero {
+    padding-top: 170px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    padding-bottom: 180px;
+  }
+  
+  #hero h1 {
+    font-size: 65px;
+    font-weight: 700;
+    color: #859a9d;
+    text-shadow: 1px 1px 0 #333333, -1px -1px 0 #333333, 1px -1px 0 #333333, -1px 1px 0 #333333;
+    width: 30%;
+  }
+  
+  #hero .imgg img {
+    width:60% ;
+    object-fit: cover;
+    object-position: center center;
+    border: 2px solid #325684;
+    border-radius: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 
-/* Tapşırıqların Siyahısı */
-.container {
+  .tapsiriq {
+    text-align: center;
+    font-size: xx-large;
+    color: #859a9d;
+  }
+  
+  .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-}
-
-#task-list {
+  }
+  
+  #task-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    padding: 0 10px;
-}
-
-.task {
-    position: relative;
-    top: 100px;
-    background-color: #00a6ff;
+  }
+  
+  .task {
+    background-color: #859a9d;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.task:hover {
+  }
+  
+  .task:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-.task h2 {
+  }
+  
+  .task h2 {
     font-size: 1.6rem;
     color: #333;
     margin-bottom: 10px;
     text-transform: capitalize;
-}
-
-.task p {
+  }
+  
+  .task p {
     font-size: 1rem;
     color: #333;
     margin: 5px 0;
-}
-
-strong {
-    color: black;
-    font-weight: bold;
-}
-
-.task ul {
+  }
+  
+  .task ul {
     list-style-type: none;
     padding-left: 0;
     margin: 15px 0 0;
-}
-
-.task ul li {
+  }
+  
+  .task ul li {
     background-color: #fff;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.task a {
+  }
+  
+  .task a {
     color: #007bff;
     text-decoration: none;
-}
-
-.task a:hover {
+  }
+  
+  .task a:hover {
     text-decoration: underline;
-}
-
-#task-list p {
-    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #859a9d;
+    padding: 30px 0;
+  }
+  
+  footer p {
     color: white;
-    text-align: center;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
+    font-size: 20px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+      font-size: 2rem;
     }
-
-    .telebe-head h2 {
-        font-size: 1.5rem;
-    }
-
+  
     .task {
-        padding: 15px;
+      padding: 15px;
     }
-
+  
     .task h2 {
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
-
+  
     .task p {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
+  
     nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
+      flex-direction: column
+    }}
 
-    .icons ul {
-        flex-direction: column;
-        gap: 15px;
+
+
+    .submit-btn {
+        background-color: blue;
+        color: white;
+        border: 2px solid blue;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.3s ease;
     }
-}
+    
+    .submit-btn:hover {
+        background-color: darkblue;
+    }
+    
+    .submit-btn:focus {
+        outline: none;
+    }
+    
+    .submit-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        transition: left 0.3s ease;
+    }
+    
+    .submit-btn:active::before {
+        left: 0;
+    }
+    
+
