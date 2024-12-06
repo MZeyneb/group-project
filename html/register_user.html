@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/assets/css/user_register.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div id="register-form">
+      <div class="side">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        
+      </div>
+
+      <div class="wrapper">
+
+        <h2>Register</h2>
+        <form id="register-form-element">
+          <input
+            type="text"
+            id="register-username"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Password"
+            required
+          />
+          <input type="email" id="register-email" placeholder="Email" required />
+          <input type="file" id="input_file" accept="image/*" />
+          <input type="submit" class="sub" value="Register" />
+          <p id="last">
+            Do you have an account? <a href="login_user.html">Login here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- External libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../src/script/register_user.js" type="module"></script>
+  </body>
+</html>
