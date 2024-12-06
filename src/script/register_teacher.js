@@ -16,6 +16,7 @@ function validatePassword(password) {
 
 async function fetchData(endpoint) {
   try {
+    
     const response = await fetch(`${BASE_URL}/${endpoint}`);
     if (!response.ok) {
       throw new Error('Ошибка при загрузке данных');

@@ -47,7 +47,7 @@ loginButton.addEventListener("click", async (e) => {
       }).then(() => {
         matchingUser.Islogged = true;
 
-        fetch(`${BASE_URL}/${endpoints.students}/${matchingUser.id}`, {
+        fetch(`${BASE_URL}/${endpoints.teachers}/${matchingUser.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

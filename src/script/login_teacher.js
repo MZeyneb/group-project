@@ -36,7 +36,7 @@ loginButton.addEventListener("click", async (e) => {
     const users = await fetchUsers();
 
     const matchingUser = users.find(
-      (user) => user.name === username && user.password === password
+      (user) => user.username === username && user.password === password
     );
 
     if (matchingUser) {
