@@ -8,6 +8,98 @@
       "password": "Amirov123",
       "major": "programming",
       "profileImage": "https://cdn3d.iconscout.com/3d/premium/thumb/teacher-avatar-3d-icon-download-in-png-blend-fbx-gltf-file-formats--professor-education-profession-pack-people-icons-4936175.png?f=webp"
+    },
+    {
+      "id": "1733410451392",
+      "name": "zeyneb",
+      "email": "zeyneb@gmail.com",
+      "password": "zeyneb20052005",
+      "Islogged": false
+    },
+    {
+      "id": "1733410587078",
+      "name": "zeynebb",
+      "email": "zeynebb@gmail.com",
+      "password": "Zeyneb2005",
+      "Islogged": false
+    },
+    {
+      "id": 1733480810294,
+      "username": "KananAMir",
+      "email": "jdnoawed@dajo",
+      "password": "KananAmin123",
+      "Islogged": false
+    },
+    {
+      "id": 1733481398763,
+      "username": "rashid",
+      "email": "wefij@vmsen",
+      "password": "rashid12R",
+      "Islogged": false
+    },
+    {
+      "id": 1733481858549,
+      "username": "Zeyneb123",
+      "email": "sanlnoD@daslj",
+      "password": "zeynem12345W2",
+      "Islogged": false
+    },
+    {
+      "id": 1733482261556,
+      "name": "fewe",
+      "email": "dsankwod@daknond",
+      "password": "akldwaW2e23W",
+      "isLogged": false,
+      "profileImage": ""
+    },
+    {
+      "id": 1733482558383,
+      "name": "EminovEmina4tb",
+      "email": "dwij@dsajn",
+      "password": "EminovEMina4tb",
+      "isLogged": false,
+      "profileImage": ""
+    },
+    {
+      "id": 1733482841786,
+      "name": "jwkdq21j",
+      "email": "dwjbkdawddw@dajn",
+      "password": "dwqlj2WDdwhb",
+      "isLogged": false,
+      "profileImage": ""
+    },
+    {
+      "id": 1733483074243,
+      "name": "kaband",
+      "email": "dnwl@dsjah",
+      "password": "djlwnqbdbw3W",
+      "isLogged": false,
+      "profileImage": ""
+    },
+    {
+      "id": 1733488274682,
+      "name": "wbdja",
+      "email": "dwand@dsa",
+      "password": "dwadjb2WS",
+      "isLogged": false,
+      "profileImage": ""
+    },
+    {
+      "id": "1733494381032",
+      "name": "EminovEMin",
+      "email": "awdnka@dsajk",
+      "password": "kjwdqwbj@nda2W",
+      "isLogged": false,
+      "profileImage": "",
+      "Islogged": true
+    },
+    {
+      "id": "1733494452704",
+      "name": "Zeybdahdwda",
+      "email": "dada@da",
+      "password": "dwajdalW2313",
+      "isLogged": true,
+      "profileImage": ""
     }
   ],
   "students": [
@@ -42,6 +134,7 @@
       ]
     },
     {
+
       "id": "3",
       "fullName": "Ali Jalilov",
       "email": "ali.jalilov@code.edu.az",
@@ -55,6 +148,250 @@
           "grade": 70
         }
       ]
+
+      "id": "1733406826473",
+      "name": "asdas",
+      "email": "asdas@dasdas",
+      "password": "sadas",
+      "Islogged": false
+    },
+    {
+      "id": "1733406841690",
+      "name": "asdas",
+      "email": "asda@dsadas",
+      "password": "asdasd",
+      "Islogged": false
+    },
+    {
+      "id": "1733407170465",
+      "name": "Emin7963",
+      "email": "eminovemin516@gmail.com",
+      "password": "emin7963",
+      "Islogged": false
+    },
+    {
+      "id": "1733407749962",
+      "name": "sdqwd",
+      "email": "dasdwa@dsadwq",
+      "password": "daw13",
+      "Islogged": false
+    },
+    {
+      "id": "1733410728924",
+      "name": "zeyneb",
+      "email": "zeynebbb@gmail.com",
+      "password": "sgfdgdf",
+      "Islogged": false
+    },
+    {
+      "id": "1733410867809",
+      "name": "zeyneeb",
+      "email": "zeyneeb@gmail.com",
+      "password": "zbjsbd",
+      "Islogged": false
+    },
+    {
+      "id": "1733410945897",
+      "name": "zeynebs",
+      "email": "sdasda@gmail.com",
+      "password": "sdadasd",
+      "Islogged": false
+    },
+    {
+      "id": "1733411057904",
+      "name": "rtrer",
+      "email": "sdasdra@gmail.com",
+      "password": "rtretre",
+      "Islogged": false
+    },
+    {
+      "id": "1733411100371",
+      "name": "zeynebd",
+      "email": "zeyneeeeb@gmail.com",
+      "password": "dsfsdf",
+      "Islogged": false
+    },
+    {
+      "id": "1733411170212",
+      "name": "sdf",
+      "email": "sdfdsf@gmail.com",
+      "password": "sdffsd",
+      "Islogged": false
+    },
+    {
+      "id": "1733411257638",
+      "name": "zeyneebbb",
+      "email": "dfsdf@gmail.com",
+      "password": "dsvs",
+      "Islogged": false
+    },
+    {
+      "id": "1733411698044",
+      "name": "jbjhiqwdbqw",
+      "email": "bdhydawd@bdhsaj",
+      "password": "dnuoqwe12W2@",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/a19c131b-b139-487d-b938-add27cc93fa8"
+    },
+    {
+      "id": "1733411915453",
+      "name": "dadweq",
+      "email": "adswq@sadd",
+      "password": "wqe1234S",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/591239b4-c9dd-4cfc-b902-72e527983924"
+    },
+    {
+      "id": "1733412026912",
+      "name": "fwui",
+      "email": "fjieowjfiwr@ndue",
+      "password": "uihfwr23hE3",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/0c564284-3dc4-4c3b-9354-4aef267c2916"
+    },
+    {
+      "id": "1733412054327",
+      "name": "fmiowe",
+      "email": "okneknd@aud",
+      "password": "djiqwrjrE213",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/be9d69fb-f5fa-4142-871b-8e1bbbb5acca"
+    },
+    {
+      "id": "1733412172900",
+      "name": "dwasdw",
+      "email": "dadugv@dsaii",
+      "password": "dadwS32sr",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/4b68e9f9-5ced-4b28-bfea-1bcaad3d4ea0"
+    },
+    {
+      "id": "1733412209728",
+      "name": "sdwd",
+      "email": "dwqdw@dsa",
+      "password": "dwqde3Dwqe",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/cc89e157-ef63-4fac-b0cf-71ad2b2ebb7a"
+    },
+    {
+      "id": "1733412500308",
+      "name": "housdhoef",
+      "email": "dhkwav@dajsb",
+      "password": "dsahbS4asd",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/14b5cd45-66e2-46f5-8a95-c67ddc4c73c1"
+    },
+    {
+      "id": "1733424997200",
+      "name": "eminov7963",
+      "email": "eminovemin199912@gmail.com",
+      "password": "Emin79637963",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/8eb17d34-2297-4dcd-b603-4eddecd27961"
+    },
+    {
+      "id": "1733425480706",
+      "name": "emin",
+      "email": "emin@gmail.com",
+      "password": "Emin12345",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/8459dd90-6708-40fa-af88-5317d23fd871"
+    },
+    {
+      "id": "1733429513202",
+      "name": "astrid",
+      "email": "astrid@gmail.com",
+      "password": "Astrid123",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/3064b115-1ae3-4016-812c-c95bea7f0e28"
+    },
+    {
+      "id": "1733430046458",
+      "name": "AstridEmin",
+      "email": "eminovemin199s@gmail.com",
+      "password": "S19691988",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/1558ef0d-af05-4985-ade8-769f444f1587"
+    },
+    {
+      "id": 1733480365256,
+      "name": "hdbywq8v",
+      "email": "sawwUI@adji",
+      "password": "daswjodnwq123W",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/5d6e96aa-a149-4286-803c-885a1eb82c4b"
+    },
+    {
+      "id": 1733480470540,
+      "name": "Emin123Emin",
+      "email": "dnaojdnwq@dsbahi",
+      "password": "Eminov7963emin",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/c21a1ec9-d077-4d3d-9dcd-63d129eb2ef4"
+    },
+    {
+      "id": 1733485381525,
+      "name": "ewbjeq12",
+      "email": "sda@dsaj",
+      "password": "Wbe123S21",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/a9011a8c-1818-45fa-8048-b4ca3363b80d"
+    },
+    {
+      "id": "d1fe",
+      "name": "jkdweq",
+      "password": "dawjnd2WS",
+      "email": "dwnjn@dsajk",
+      "profileImage": "blob:http://127.0.0.1:5500/5e4de04e-fa19-4748-98d4-62129008b517"
+    },
+    {
+      "id": 1733485630270,
+      "name": "dbwjlq",
+      "email": "dwklnd@dwaj",
+      "password": "nkdw2Wdwanklj",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/63c99ebe-048f-4c74-88e8-9f9e59d9f65a"
+    },
+    {
+      "id": 1733487570984,
+      "name": "EMihnsdf",
+      "email": "sdwajd@dwa",
+      "password": "dajd2Wdasdw",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/4d1ce8b6-fa6c-4a76-a776-34c21d38b428"
+    },
+    {
+      "id": 1733488230016,
+      "name": "wnjlaqd",
+      "email": "dawd@dwajk",
+      "password": "dwnja2SSDWN",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/8ee80e88-10fb-4094-8c89-c51f5c3a05dd"
+    },
+    {
+      "id": 1733493859231,
+      "name": "rashudw",
+      "email": "Rashid@dajbdmw",
+      "password": "dwkbqW123",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/ce2d0768-5535-4442-842b-b7dbd907fe30"
+    },
+    {
+      "id": 1733493912952,
+      "name": "Eminiyew",
+      "email": "sawwUI@ad",
+      "password": "aefsegewegR1313",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/10bea8b9-a396-4c90-8d90-cecd86aa57b4"
+    },
+    {
+      "id": "1733494054375",
+      "name": "Rasdjsfbkw",
+      "email": "rasduohw@dwajhdw",
+      "password": "dawdR21312",
+      "Islogged": true,
+      "profileImage": "blob:http://127.0.0.1:5500/e3911caf-5787-40de-b0ea-b48b058577fb"
+
     }
   ],
   "tasks": [
@@ -69,7 +406,24 @@
       "assignments": [
         {
           "studentId": "1",
-          "taskUrl": "https://github.com/KananAmir/AZMP101-JS&quot",
+          "taskUrl": "",
+          "assignDate": "2024-05-09 00:04:00",
+          "isChecked": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "local storage",
+      "description": "lorem ipsum dolor",
+      "topic": "REACT",
+      "deadline": "Today at 5:00 PM",
+      "createdAt": "2024-05-09 00:04:00",
+      "teacherId": "1",
+      "assignments": [
+        {
+          "studentId": "1",
+          "taskUrl": "perviz",
           "assignDate": "2024-05-09 00:04:00"
         }
       ]
@@ -96,7 +450,11 @@
       "id": "1",
       "className": "azmp",
       "teacherId": "2",
-      "studentIds": ["1", "2", "3"]
+      "studentIds": [
+        "1",
+        "2",
+        "3"
+      ]
     }
   ]
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="../src/assets/css/teacher_login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/assets/css/teacher_login.css">
+  </head>
+  <body>
+    <div id="register-form">
+
+      <div class="side">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <h4>Welcome again!</h4>
+      </div>
+      
+      <div class="wrapper">
+        <div class="btns">
+          <button class="signin"><a href="#">Sign In</a></button>
+          <button class="signup"><a href="teacher_register.html">Sign Up</a></button>
+
+        </div>
+        <h2>Teacher Login</h2>
+      <form id="register-form-element">
+        <input
+          type="text"
+          id="register-username"
+          placeholder="Username or Email"
+          required
+        />
+        <input
+          type="password"
+          id="register-password"
+          placeholder="Password"
+          required
+        />
+
+        <input type="submit" class="sub">
+      </form>
+
+
+      </div>
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../src/script/login_teacher.js" type="module"></script>
+  </body>
+</html>
