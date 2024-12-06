@@ -51,7 +51,7 @@ registerForm.addEventListener("submit", async function (e) {
 
   if (!findAccount) {
     const user = {
-      id: Date.now(),
+      id: Date.now().toString(),
       name: name_value,
       email: email_value,
       password: password_value,

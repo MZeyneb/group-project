@@ -59,7 +59,7 @@ registerForm.addEventListener("submit", async function (e) {
   if (!findAccount) {
     // Yeni kullanıcı nesnesi oluştur
     const user = {
-      id: Date.now(),
+      id: Date.now().toString(),
       name: nameValue,
       email: emailValue,
       password: passwordValue,

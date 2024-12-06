@@ -35,29 +35,50 @@ loginButton.addEventListener("click", async (e) => {
   try {
     const users = await fetchUsers();
 
-    const matchingUser = users.find(
+    let matchingUser = users.find(
       (user) => user.name === username && user.password === password
     );
 
     if (matchingUser) {
-      Swal.fire({
-        icon: "success",
-        title: "Başarılı!",
-        text: "Giriş başarılı, hoş geldiniz!",
-      }).then(() => {
-        matchingUser.Islogged = true;
+      console.log(matchingUser);
 
-        fetch(`${BASE_URL}/${endpoints.teachers}/${matchingUser.id}`, {
+      // Kullanıcı zaten giriş yapmadıysa, giriş yapmasını sağla
+      if (matchingUser.Islogged === false) {
+        console.log(matchingUser.Islogged);
+        fetch(`${BASE_URL}/${endpoints.students}/${matchingUser.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ Islogged: true }),
+        })
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: "Başarılı!",
+              text: "Giriş başarılı, hoş geldiniz!",
+            }).then(() => {
+              window.location.href = "register_user.html";
+            });
+          })
+          .catch((error) => {
+            console.error("Giriş güncelleme hatası:", error);
+            Swal.fire({
+              icon: "error",
+              title: "Hata",
+              text: "Bir sorun oluştu, lütfen tekrar deneyin.",
+            });
+          });
+      } else {
+        // Kullanıcı zaten giriş yapmış
+        Swal.fire({
+          icon: "info",
+          title: "Bilgi",
+          text: "Kullanıcı zaten giriş yapmış.",
         });
-
-        window.location.href = "register_user.html";
-      });
+      }
     } else {
+      // Hatalı kullanıcı adı veya şifre
       Swal.fire({
         icon: "error",
         title: "Hata",
@@ -70,6 +91,6 @@ loginButton.addEventListener("click", async (e) => {
       icon: "error",
       title: "Hata",
       text: "Bir sorun oluştu, lütfen tekrar deneyin.",
-    });
-  }
+    });
+  }
 });

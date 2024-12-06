@@ -54,7 +54,7 @@ loginForm.addEventListener("submit", async (e) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ Islogged: true }),
+          body: JSON.stringify({ isLogged: true }),
         });
 
         window.location.href = "teacher_register.html";
