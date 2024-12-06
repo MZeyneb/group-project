@@ -1,5 +1,7 @@
 // #859A9D
 
+import Swal from 'sweetalert2';
+
 document.getElementById('add-task-btn').addEventListener('click', () => {
     Swal.fire({
         title: 'Add New Task',
@@ -108,7 +110,6 @@ function RenderTasks() {
         .then(data => {
             tasks = data;
 
-            // Проверка на наличие задач
             const tableBody = document.getElementById('TaskTableBody');
             if (tasks.length === 0) {
                 tableBody.innerHTML = `
@@ -148,6 +149,27 @@ function renderTable(tasks) {
         </tr>
     `).join('');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Delegate events for edit and delete buttons
+    document.getElementById('TaskTableBody').addEventListener('click', function(event) {
+        const taskId = event.target.closest('tr')?.getAttribute('data-id');
+        
+        if (!taskId) return;
+
+        // Handle edit button click
+        if (event.target.classList.contains('edit-btn')) {
+            editTask(taskId);
+        }
+
+        // Handle delete button click
+        if (event.target.classList.contains('delete-btn')) {
+            deleteTask(taskId);
+        }
+    });
+
+    RenderTasks();
+});
 
 function deleteTask(TaskId) {
     Swal.fire({
@@ -217,7 +239,7 @@ function editTask(TaskId) {
                 </div>
                 <div class="deadline">
                     <label for="deadline">Deadline</label>
-                    <input type="text" id="deadline" value="${task.deadline}">
+                    <input type="date" id="deadline" value="${task.deadline}">
                 </div>
             </div>
         `,
@@ -265,132 +287,40 @@ function editTask(TaskId) {
     });
 }
 
+const user = document.querySelector(".user")
+const overlay = document.querySelector(".overlay")
+const ul = document.querySelector(".overlay ul")
+overlay.style.height = "0" 
+ul.style.opacity = "0"
+user.addEventListener("click", function(){
+    if(overlay.style.height == "100px" ){
+        overlay.style.height = "0" 
+        ul.style.opacity = "0"
+    }
+    else{
+        overlay.style.height = "100px" 
+        ul.style.opacity = "1"
+    }
+    
+})
 
-const sidebar = document.createElement('div');
-sidebar.id = 'sidebar';
-sidebar.style.width = '200px';
-sidebar.style.height = '100vh';
-sidebar.style.backgroundColor = '#859A9D';
-sidebar.style.position = 'fixed';
-sidebar.style.top = '0';
-sidebar.style.right = '-200px';
-sidebar.style.boxSizing = 'border-box';
-sidebar.style.transition = 'right 0.3s ease';
-document.body.appendChild(sidebar);
+document.getElementById('logout').addEventListener('click', function(event) {
+  event.preventDefault();
 
-const image = document.createElement('img');
-image.src ='';
-image.style.borderRadius = '50%';
-image.style.width = '100px';
-image.style.height = '100px';
-image.style.display = 'flex';
-image.style.justifyContent = 'center';
-image.style.alignItems = 'center';
-sidebar.appendChild(image);
-
-const Logoutbtn = document.createElement('button');
-
-function createMenuItem(text, href, action) {
-  const div = document.createElement('div');
-  div.style.width = '200px';
-  div.style.height = '40px';
-  div.style.textAlign = 'left';
-  div.style.transition = '0.6s ease';
-
-
-  const link = document.createElement('a');
-  link.id = text.toLowerCase();
-  link.id = text;
-  link.innerText = text;
-  link.href = href;
-  link.style.display = 'block';
-  link.style.padding = '12px 4px';
-  link.style.color = '#fff';
-  link.style.textDecoration = 'none';
-  link.style.fontSize = '1rem';
-  link.style.fontFamily = 'Arial, sans-serif';
-  if (action) link.setAttribute('data-action', action);
-
-  div.appendChild(link);
-  div.onmouseover = () => (div.style.backgroundColor = '#7d9294');
-  div.onmouseout = () => (div.style.backgroundColor = '#859A9D');
-
-  sidebar.appendChild(div);
-}
-
-createMenuItem('Products', 'product.html');
-createMenuItem('login', 'login.html','login');
-createMenuItem('registration', 'register.html','registration');
-createMenuItem('logout', '#','logout');
-
-document.querySelectorAll('[data-action]').forEach((menuItem) => {
-  menuItem.addEventListener('click', (event) => {
-    event.preventDefault();
-    const action = event.target.dataset.action;
-
-  if (action === 'logout') {
-      Swal.fire({
-          title: 'Are you sure?',
-          text: "Do you really want to log out?",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, log out!'
-      }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire({
-              title: 'Logged Out',
-              text: 'You have been logged out successfully.',
-              icon: 'success',
-               confirmButtonText: 'OK',
-          }).then(() => {
-              location.href = "login.html"
-          })
-             
-          }
-      });
-  } else if (action === 'login' || action === 'registration') {
-      window.location.href = event.target.href;
-  }
-});
-});
-
-const closeButton = document.createElement('button');
-closeButton.innerText = 'X';
-closeButton.style.position = 'absolute';
-closeButton.style.top = '2px';
-closeButton.style.left = '9px';
-closeButton.style.fontSize = '0.6rem';
-closeButton.style.background = 'none';
-closeButton.style.border = 'none';
-closeButton.style.color = '#fff';
-closeButton.style.opacity = '0.7';
-closeButton.style.cursor = 'pointer';
-sidebar.appendChild(closeButton);
-
-const user = document.querySelector('.user'); 
-
-let sidebarVisible = false;
-
-user.onclick = () => {
-  sidebarVisible = !sidebarVisible;
-  sidebar.style.right = sidebarVisible ? '0' : '-200px';
-};
-
-closeButton.onclick = () => {
-  sidebarVisible = false;
-  sidebar.style.right = '-200px';
-};
-document.addEventListener("DOMContentLoaded", () => {
-  const searchBtn = document.querySelector('.search-Btn');
-  let isScrolling;
-
-  window.addEventListener('scroll', () => {
-      searchBtn.classList.add('hidden'); 
-      clearTimeout(isScrolling); 
-      isScrolling = setTimeout(() => {
-          searchBtn.classList.remove('hidden'); 
-      }, 600); 
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'Do you want to log out?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, log out!',
+    cancelButtonText: 'No, stay logged in'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      sessionStorage.clear();
+      
+      window.location.href = "../html/index.html"; 
+    }
   });
 });
