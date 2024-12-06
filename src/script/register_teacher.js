@@ -12,6 +12,7 @@ let totalData = null;
 // Verileri API'den almak için genel bir fonksiyon
 async function fetchData(endpoint) {
   try {
+    
     const response = await fetch(`${BASE_URL}/${endpoint}`);
     const data = await response.json();
     totalData = data;
