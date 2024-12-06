@@ -8,6 +8,8 @@ async function getTasks() {
 }
 
 getTasks();
+const urlParams = new URLSearchParams(window.location.search);
+const studentId = urlParams.get('id');
 
 function displayTasks(tasks) {
     const taskList = document.getElementById('task-list');
@@ -19,6 +21,7 @@ function displayTasks(tasks) {
             const taskElement = document.createElement('div');
             taskElement.classList.add('task');
             const inp = document.querySelector(".inp")
+
 
             taskElement.innerHTML = `
                 <h2>${task.title}</h2>
@@ -34,6 +37,7 @@ function displayTasks(tasks) {
                             <p>Task File</p>
                             <strong>
                                 <input type="url" placeholder="task" class="inp" id="task-file-${assignment.studentId}" /> 
+                                <input type="checkbox" class="checkbox" id="checkbox-${assignment.studentId}" /> 
                                 <button class="submit-btn"  data-student-id="${assignment.studentId}">Submit</button>
                             </strong>
                             <br>
@@ -52,18 +56,40 @@ function displayTasks(tasks) {
                     const inp = document.getElementById(`task-file-${studentId}`);
                     const taskUrl = inp.value.trim();
                     const assignmentToUpdate = task.assignments.find(assignment => assignment.studentId === studentId);
+                    const checkbox = document.getElementById(`checkbox-${studentId}`);
+                    const isChecked = checkbox.checked
+                    
+                    
 
                     if (assignmentToUpdate) {
                         assignmentToUpdate.taskUrl = taskUrl;
+                        assignmentToUpdate.isChecked = isChecked;
+
+                           
+
+                        // const newAssignment = {
+                        //     studentId: studentId,  // You can set this dynamically based on the current user
+                        //     taskUrl: "",           // Placeholder for the new URL, user will fill this
+                        //     assignDate: new Date().toISOString() // You can adjust the date format as required
+                        // };
+                        // task.assignments.push(newAssignment);
 
                         // Call the API to patch the updated task (this assumes you have a patch API)
                         editDataById(endpoints.tasks, task.id, {
                             assignments: task.assignments  // send the updated assignments array
                         });
 
+           
+
+
+
+                        // addNewData(endpoints.tasks, task.id, {
+                        //     assignments: task.assignments  // send the updated assignments array
+                        // });
+
                         // Optionally, update the status after submission
                         const statusElement = document.getElementById(`status-${studentId}`);
-                        statusElement.textContent = 'Submitted';
+                       
                     }
                 });
             });

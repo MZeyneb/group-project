@@ -39,8 +39,9 @@
       "assignments": [
         {
           "studentId": "1",
-          "taskUrl": "1sdadas",
-          "assignDate": "2024-05-09 00:04:00"
+          "taskUrl": "",
+          "assignDate": "2024-05-09 00:04:00",
+          "isChecked": true
         }
       ]
     },
@@ -61,7 +62,6 @@
       ]
     }
   ],
-  
   "classes": [
     {
       "id": "1",
