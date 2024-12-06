@@ -40,6 +40,21 @@
           "grade": 70
         }
       ]
+    },
+    {
+      "id": "2",
+      "fullName": "Ali Jalilov",
+      "email": "ali.jalilov@code.edu.az",
+      "username": "AliAliyev",
+      "password": "Aliyev123",
+      "profileImage": "https://static.vecteezy.com/system/resources/previews/021/770/056/non_2x/avatar-of-a-student-character-free-vector.jpg",
+      "teacherId": "2",
+      "grades": [
+        {
+          "taskId": "1",
+          "grade": 70
+        }
+      ]
     }
   ],
   "tasks": [
