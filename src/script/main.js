@@ -54,6 +54,7 @@ function createMenuItem(text, href, action) {
     link.style.fontSize = '1.2rem';
     link.style.fontFamily = 'Arial, sans-serif';
     link.style.borderRadius = '5px';  
+    link.style.transition = "0.3s"
     if (action) link.setAttribute('data-action', action);
 
     div.appendChild(link);
