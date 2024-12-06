@@ -142,12 +142,11 @@
       ]
     },
     {
-
-      "id": "3",
+      "id": "1733406826473",
       "fullName": "Ali Jalilov",
-      "email": "ali.jalilov@code.edu.az",
+      "email": "asdas@dasdas",
       "username": "AliAliyev",
-      "password": "Aliyev123",
+      "password": "sadas",
       "profileImage": "https://static.vecteezy.com/system/resources/previews/021/770/056/non_2x/avatar-of-a-student-character-free-vector.jpg",
       "teacherId": "2",
       "grades": [
@@ -156,11 +155,7 @@
           "grade": 70
         }
       ],
-
-      "id": "1733406826473",
       "name": "asdas",
-      "email": "asdas@dasdas",
-      "password": "sadas",
       "Islogged": false
     },
     {
@@ -399,7 +394,14 @@
       "password": "dawdR21312",
       "Islogged": true,
       "profileImage": "blob:http://127.0.0.1:5500/e3911caf-5787-40de-b0ea-b48b058577fb"
-
+    },
+    {
+      "id": "1733498063403",
+      "name": "emineminovv1",
+      "email": "emin111@gmail.com",
+      "password": "Emin20042004",
+      "Islogged": false,
+      "profileImage": "blob:http://127.0.0.1:5500/d1f03aba-9f16-4360-a879-5ba50c5a4ffa"
     }
   ],
   "tasks": [
