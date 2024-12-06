@@ -57,7 +57,7 @@ loginForm.addEventListener("submit", async (e) => {
           body: JSON.stringify({ isLogged: true }),
         });
 
-        window.location.href = "teacher_register.html";
+        window.location.href = "index.html";
       });
     } else {
       Swal.fire({
