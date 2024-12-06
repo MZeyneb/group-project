@@ -39,19 +39,39 @@
       "assignments": [
         {
           "studentId": "1",
-          "taskUrl": "https://github.com/KananAmir/AZMP101-JS&quot",
-          "assignDate": "2024-05-09 00:04:00",
-          "truefalse": "Link Boşdur"
+          "taskUrl": "1sdadas",
+          "assignDate": "2024-05-09 00:04:00"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "local storage",
+      "description": "lorem ipsum dolor",
+      "topic": "REACT",
+      "deadline": "Today at 5:00 PM",
+      "createdAt": "2024-05-09 00:04:00",
+      "teacherId": "1",
+      "assignments": [
+        {
+          "studentId": "1",
+          "taskUrl": "1sdadas",
+          "assignDate": "2024-05-09 00:04:00"
         }
       ]
     }
   ],
+  
   "classes": [
     {
       "id": "1",
       "className": "azmp",
       "teacherId": "2",
-      "studentIds": ["1", "2", "3"]
+      "studentIds": [
+        "1",
+        "2",
+        "3"
+      ]
     }
   ]
 }
