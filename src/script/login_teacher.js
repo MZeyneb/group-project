@@ -1,62 +1,75 @@
-import BASE_URL from "../constants/api.js";
+import BASE_URL, { endpoints } from "../constants/api.js";
 
-const loginForm = document.querySelector("#login-form-element");
-const loginUsername = document.querySelector("#login-username");
-const loginPassword = document.querySelector("#login-password");
+const usernameInput = document.querySelector("#register-username");
+const passwordInput = document.querySelector("#register-password");
+const loginButton = document.querySelector(".sub");
 
-// Function to fetch user data
-async function fetchData(endpoint) {
-  const response = await fetch(`${BASE_URL}/${endpoint}`);
-  const data = await response.json();
-  return data;
+async function fetchUsers() {
+  try {
+    const response = await fetch(`${BASE_URL}/${endpoints.students}`);
+    if (!response.ok) {
+      throw new Error("Kullanıcı bilgileri alınamadı.");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Veri alma hatası:", error);
+    return [];
+  }
 }
 
-loginForm.addEventListener("submit", async function (e) {
+loginButton.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  const usernameOrEmail = loginUsername.value.trim();
-  const password = loginPassword.value.trim();
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
 
-  const users = await fetchData("teachers");
-
-  // Check if the user exists
-  const user = users.find(
-    (user) =>
-      (user.username === usernameOrEmail || user.email === usernameOrEmail) &&
-      user.password === password
-  );
-
-  if (user) {
-    // Update the user as logged in
-    fetch(`${BASE_URL}/teachers/${user.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ Islogged: true }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Login successful!",
-            showConfirmButton: false,
-            timer: 1500,
-          }).then(() => {
-            // window.location.replace("index.html");
-            alert("succesfully")
-          });
-        }
-      })
-      .catch((err) => console.error("Error", err));
-  } else {
+  if (!username || !password) {
     Swal.fire({
-      position: "center",
       icon: "error",
-      title: "Invalid username/email or password.",
-      showConfirmButton: false,
-      timer: 1500,
+      title: "Hata",
+      text: "Kullanıcı adı ve şifre boş bırakılamaz!",
+    });
+    return;
+  }
+
+  try {
+    const users = await fetchUsers();
+
+    const matchingUser = users.find(
+      (user) => user.name === username && user.password === password
+    );
+
+    if (matchingUser) {
+      Swal.fire({
+        icon: "success",
+        title: "Başarılı!",
+        text: "Giriş başarılı, hoş geldiniz!",
+      }).then(() => {
+        matchingUser.Islogged = true;
+
+        fetch(`${BASE_URL}/${endpoints.students}/${matchingUser.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Islogged: true }),
+        });
+
+        window.location.href = "teacher_register.html";
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Hata",
+        text: "Kullanıcı adı veya şifre hatalı!",
+      });
+    }
+  } catch (error) {
+    console.error("Giriş işlemi hatası:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Hata",
+      text: "Bir sorun oluştu, lütfen tekrar deneyin.",
     });
   }
 });
